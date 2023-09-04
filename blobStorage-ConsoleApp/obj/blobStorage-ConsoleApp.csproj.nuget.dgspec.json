@@ -47,6 +47,10 @@
             "Azure.Storage.Blobs": {
               "target": "Package",
               "version": "[12.17.0, )"
+            },
+            "Nito.AsyncEx.Context": {
+              "target": "Package",
+              "version": "[5.1.2, )"
             }
           },
           "imports": [

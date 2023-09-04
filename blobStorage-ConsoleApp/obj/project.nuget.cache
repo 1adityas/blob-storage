@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Xxx7f7jem+jptlcBMFB3KqnsxvxP3ji6YTP4/qW7kh0nx1PcYw6CKsXpqcCiWycUqUovxnI9wQEvVYBvhJ8SCA==",
+  "dgSpecHash": "2a2oVxrBFrlOV6czBtcZggeLlJyMFLrQTk3/q8PVEbUY9mfX+xAUOBBo4+XD6t4pL+/7/YYzHxSj3YKqNXubiQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\adity\\source\\repos\\blobStorage-ConsoleApp\\blobStorage-ConsoleApp\\blobStorage-ConsoleApp.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,10 @@
     "C:\\Users\\adity\\.nuget\\packages\\microsoft.identity.client.extensions.msal\\2.31.0\\microsoft.identity.client.extensions.msal.2.31.0.nupkg.sha512",
     "C:\\Users\\adity\\.nuget\\packages\\microsoft.identitymodel.abstractions\\6.22.0\\microsoft.identitymodel.abstractions.6.22.0.nupkg.sha512",
     "C:\\Users\\adity\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\adity\\.nuget\\packages\\nito.asyncex.context\\5.1.2\\nito.asyncex.context.5.1.2.nupkg.sha512",
+    "C:\\Users\\adity\\.nuget\\packages\\nito.asyncex.tasks\\5.1.2\\nito.asyncex.tasks.5.1.2.nupkg.sha512",
+    "C:\\Users\\adity\\.nuget\\packages\\nito.disposables\\2.2.1\\nito.disposables.2.2.1.nupkg.sha512",
+    "C:\\Users\\adity\\.nuget\\packages\\system.collections.immutable\\1.7.1\\system.collections.immutable.1.7.1.nupkg.sha512",
     "C:\\Users\\adity\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.1\\system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",
     "C:\\Users\\adity\\.nuget\\packages\\system.io.filesystem.accesscontrol\\5.0.0\\system.io.filesystem.accesscontrol.5.0.0.nupkg.sha512",
     "C:\\Users\\adity\\.nuget\\packages\\system.io.hashing\\6.0.0\\system.io.hashing.6.0.0.nupkg.sha512",

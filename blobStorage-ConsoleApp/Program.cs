@@ -13,7 +13,12 @@ var blobCrudObject = new blob_crud(connectionString);
 
 //AsyncContext.Run(blobCrudObject.NewContainer);
 
-AsyncContext.Run(blobCrudObject.UploadBlob);
+//blobCrudObject.UploadBlob("newcontainer-1");
+blobCrudObject.ListContainers();
+blobCrudObject.DeleteContainer("quickstartblobs14f8f1ef-7303-4b78-9f22-138d6ee63612");
+
+//AsyncContext.Run(blobCrudObject.UploadBlob); <-- when uploadBlob had no parameters
+
 
 
 

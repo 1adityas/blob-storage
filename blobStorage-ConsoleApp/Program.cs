@@ -11,7 +11,7 @@ var blobCrudObject = new blob_crud(connectionString);
 
 //to create a new container
 
-AsyncContext.Run(blobCrudObject.NewContainer);
+//AsyncContext.Run(blobCrudObject.NewContainer);
 
 AsyncContext.Run(blobCrudObject.UploadBlob);
 

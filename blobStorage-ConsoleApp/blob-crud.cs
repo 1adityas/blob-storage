@@ -27,7 +27,6 @@ namespace blobStorage_ConsoleApp
             // Create the container and return a container client object
             BlobContainerClient containerClient = await blobServiceClient.CreateBlobContainerAsync(containerName);
             //Console.WriteLine(containerClient);
-
         }
         public async void UploadBlob()
         {
@@ -41,24 +40,12 @@ namespace blobStorage_ConsoleApp
             await File.WriteAllTextAsync(localFilePath, "Hello, World!");
 
             // Get a reference to a blob
-            BlobClient blobClient = new BlobClient(connectionString, "newContainer-1", fileName);
+            var blobServiceClient = new BlobServiceClient(connectionString);
+            BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient("newcontainer-1");// why we cant use async when using method
+
+            BlobClient blobClient = containerClient.GetBlobClient(fileName);
             await blobClient.UploadAsync(localFilePath, true);
         }
-        //public async void UploadBlob()
-        //{
-
-        //    // Create a local file in the ./data/ directory for uploading and downloading
-        //    string localPath = "data";
-        //    Directory.CreateDirectory(localPath);
-        //    string fileName = "quickstart" + Guid.NewGuid().ToString() + ".txt";
-        //    string localFilePath = Path.Combine(localPath, fileName);
-        //    // Write text to the file
-        //    await File.WriteAllTextAsync(localFilePath, "Hello, World!");
-
-        //    // Get a reference to a blob
-        //    BlobClient blobClient = new BlobClient(connectionString, "newContainer-1", fileName);
-        //    await blobClient.UploadAsync(localFilePath, true);
-        //}
 
 
 

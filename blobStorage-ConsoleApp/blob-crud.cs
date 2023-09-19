@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace blobStorage_ConsoleApp
 {
-    internal class blob_crud
+    internal class blob_crud : IBlobCrud
     {
 
         private string connectionString { get; set; }
-        public BlobServiceClient blobServiceClient { get; set; }
+        private BlobServiceClient blobServiceClient { get; set; }
         public blob_crud(string connectionString)
         {
             this.connectionString = connectionString;
@@ -87,17 +87,11 @@ namespace blobStorage_ConsoleApp
 
         }
 
-        public async void DeleteContainer(string containerName)
+        public void DeleteContainer(string containerName)
         {
             BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient(containerName);// why we cant use async when using method
             containerClient.Delete();
 
         }
-
-
-
-
-
-
     }
 }

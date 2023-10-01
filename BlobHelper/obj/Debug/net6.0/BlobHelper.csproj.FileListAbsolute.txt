@@ -1,0 +1,12 @@
+C:\Users\adity\source\repos\blobStorage-ConsoleApp\BlobHelper\bin\Debug\net6.0\BlobHelper.deps.json
+C:\Users\adity\source\repos\blobStorage-ConsoleApp\BlobHelper\bin\Debug\net6.0\BlobHelper.dll
+C:\Users\adity\source\repos\blobStorage-ConsoleApp\BlobHelper\bin\Debug\net6.0\BlobHelper.pdb
+C:\Users\adity\source\repos\blobStorage-ConsoleApp\BlobHelper\obj\Debug\net6.0\BlobHelper.csproj.AssemblyReference.cache
+C:\Users\adity\source\repos\blobStorage-ConsoleApp\BlobHelper\obj\Debug\net6.0\BlobHelper.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\adity\source\repos\blobStorage-ConsoleApp\BlobHelper\obj\Debug\net6.0\BlobHelper.AssemblyInfoInputs.cache
+C:\Users\adity\source\repos\blobStorage-ConsoleApp\BlobHelper\obj\Debug\net6.0\BlobHelper.AssemblyInfo.cs
+C:\Users\adity\source\repos\blobStorage-ConsoleApp\BlobHelper\obj\Debug\net6.0\BlobHelper.csproj.CoreCompileInputs.cache
+C:\Users\adity\source\repos\blobStorage-ConsoleApp\BlobHelper\obj\Debug\net6.0\BlobHelper.dll
+C:\Users\adity\source\repos\blobStorage-ConsoleApp\BlobHelper\obj\Debug\net6.0\refint\BlobHelper.dll
+C:\Users\adity\source\repos\blobStorage-ConsoleApp\BlobHelper\obj\Debug\net6.0\BlobHelper.pdb
+C:\Users\adity\source\repos\blobStorage-ConsoleApp\BlobHelper\obj\Debug\net6.0\ref\BlobHelper.dll

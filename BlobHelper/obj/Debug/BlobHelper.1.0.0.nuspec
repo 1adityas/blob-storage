@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>BlobHelper</id>
+    <version>1.0.0</version>
+    <authors>BlobHelper</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net6.0">
+        <dependency id="Azure.Storage.Blobs" version="12.18.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\adity\source\repos\blobStorage-ConsoleApp\BlobHelper\bin\Debug\net6.0\BlobHelper.dll" target="lib\net6.0\BlobHelper.dll" />
+  </files>
+</package>

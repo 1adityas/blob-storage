@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blobStorage-ConsoleApp", "blobStorage-ConsoleApp\blobStorage-ConsoleApp.csproj", "{AA3A660B-68F0-40B7-8BA1-BA703682CB38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "blobStorage-ConsoleApp", "blobStorage-ConsoleApp\blobStorage-ConsoleApp.csproj", "{AA3A660B-68F0-40B7-8BA1-BA703682CB38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlobHelper", "BlobHelper\BlobHelper.csproj", "{F08944B9-39A8-4ED3-A1C4-203F54F4E225}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{AA3A660B-68F0-40B7-8BA1-BA703682CB38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA3A660B-68F0-40B7-8BA1-BA703682CB38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA3A660B-68F0-40B7-8BA1-BA703682CB38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F08944B9-39A8-4ED3-A1C4-203F54F4E225}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F08944B9-39A8-4ED3-A1C4-203F54F4E225}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F08944B9-39A8-4ED3-A1C4-203F54F4E225}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F08944B9-39A8-4ED3-A1C4-203F54F4E225}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

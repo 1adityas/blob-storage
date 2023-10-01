@@ -1,21 +1,14 @@
 ﻿using Azure;
 using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace blobStorage_ConsoleApp
+namespace BlobHelper1
 {
-    internal class blob_crud : IBlobCrud
+    public class BlobHelper
     {
-
         private string connectionString { get; set; }
         private BlobServiceClient blobServiceClient { get; set; }
-        public blob_crud(string connectionString)
+        public BlobHelper(string connectionString)
         {
             this.connectionString = connectionString;
             this.blobServiceClient = new BlobServiceClient(connectionString);

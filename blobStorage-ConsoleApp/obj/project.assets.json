@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net6.0": {
-      "Azure.Core/1.34.0": {
+      "Azure.Core/1.35.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Bcl.AsyncInterfaces": "1.1.1",
@@ -24,10 +24,10 @@
           }
         }
       },
-      "Azure.Identity/1.10.0": {
+      "Azure.Identity/1.10.1": {
         "type": "package",
         "dependencies": {
-          "Azure.Core": "1.34.0",
+          "Azure.Core": "1.35.0",
           "Microsoft.Identity.Client": "4.54.1",
           "Microsoft.Identity.Client.Extensions.Msal": "2.31.0",
           "System.Memory": "4.5.4",
@@ -46,10 +46,10 @@
           }
         }
       },
-      "Azure.Storage.Blobs/12.17.0": {
+      "Azure.Storage.Blobs/12.18.0": {
         "type": "package",
         "dependencies": {
-          "Azure.Storage.Common": "12.16.0",
+          "Azure.Storage.Common": "12.17.0",
           "System.Text.Json": "4.7.2"
         },
         "compile": {
@@ -63,10 +63,10 @@
           }
         }
       },
-      "Azure.Storage.Common/12.16.0": {
+      "Azure.Storage.Common/12.17.0": {
         "type": "package",
         "dependencies": {
-          "Azure.Core": "1.33.0",
+          "Azure.Core": "1.35.0",
           "System.IO.Hashing": "6.0.0"
         },
         "compile": {
@@ -416,24 +416,39 @@
         "runtime": {
           "lib/netcoreapp2.1/_._": {}
         }
+      },
+      "BlobHelper/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Azure.Storage.Blobs": "12.18.0"
+        },
+        "compile": {
+          "bin/placeholder/BlobHelper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BlobHelper.dll": {}
+        }
       }
     }
   },
   "libraries": {
-    "Azure.Core/1.34.0": {
-      "sha512": "6dNpM8OlGO+5gvt97tHXBp9qWRFkimRFulupDSGRgyT3sje1kQNza1/EMYaDcolmNARPmVJo8+wgD6ReV9wG5Q==",
+    "Azure.Core/1.35.0": {
+      "sha512": "hENcx03Jyuqv05F4RBEPbxz29UrM3Nbhnr6Wl6NQpoU9BCIbL3XLentrxDCTrH54NLS11Exxi/o8MYgT/cnKFA==",
       "type": "package",
-      "path": "azure.core/1.34.0",
+      "path": "azure.core/1.35.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "CHANGELOG.md",
         "README.md",
-        "azure.core.1.34.0.nupkg.sha512",
+        "azure.core.1.35.0.nupkg.sha512",
         "azure.core.nuspec",
         "azureicon.png",
         "lib/net461/Azure.Core.dll",
         "lib/net461/Azure.Core.xml",
+        "lib/net472/Azure.Core.dll",
+        "lib/net472/Azure.Core.xml",
         "lib/net5.0/Azure.Core.dll",
         "lib/net5.0/Azure.Core.xml",
         "lib/net6.0/Azure.Core.dll",
@@ -444,32 +459,32 @@
         "lib/netstandard2.0/Azure.Core.xml"
       ]
     },
-    "Azure.Identity/1.10.0": {
-      "sha512": "j7HIhQ8Bnf2s325hNwjsTa7jXlJmWFSPgKJCrc1cv2XozEmFsjto1XaCnQzLmbPaTeL6CS5t26icTflY20BnHQ==",
+    "Azure.Identity/1.10.1": {
+      "sha512": "xyZ6hje8cDL3V5F4FMeQL4/TV9bts/fLrXf+9ine0FF7dzwlGWgOHKwmUIDIJI3VeBvspHIBZnxsM2B+pZHGtA==",
       "type": "package",
-      "path": "azure.identity/1.10.0",
+      "path": "azure.identity/1.10.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "CHANGELOG.md",
         "README.md",
-        "azure.identity.1.10.0.nupkg.sha512",
+        "azure.identity.1.10.1.nupkg.sha512",
         "azure.identity.nuspec",
         "azureicon.png",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
       ]
     },
-    "Azure.Storage.Blobs/12.17.0": {
-      "sha512": "Dix9QkBHxHGSj1GLeQ7nBLEIr+2EH8VYyKxl39zsX9VCdeppaiM6yRVZMh1nZw/PJU1uUOOvJ2dGkOzdtfHxJg==",
+    "Azure.Storage.Blobs/12.18.0": {
+      "sha512": "IUqHRXnabXCzmmvkzqPK4FuGzLxmKSugDEt5Hm5B/JlJFR+aHDsPW4nCLbG0txThqBSKPqcBBU/oA6c5TaFJgA==",
       "type": "package",
-      "path": "azure.storage.blobs/12.17.0",
+      "path": "azure.storage.blobs/12.18.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "CHANGELOG.md",
         "README.md",
-        "azure.storage.blobs.12.17.0.nupkg.sha512",
+        "azure.storage.blobs.12.18.0.nupkg.sha512",
         "azure.storage.blobs.nuspec",
         "azureicon.png",
         "lib/net6.0/Azure.Storage.Blobs.dll",
@@ -480,16 +495,16 @@
         "lib/netstandard2.1/Azure.Storage.Blobs.xml"
       ]
     },
-    "Azure.Storage.Common/12.16.0": {
-      "sha512": "LnfetNqowFvH+0vz3/UkhPIt4NR740O8ci/R5S5THVFG6VCJu5z7GY9VgqVPNSf5w2V5IfzNTrKdwwz7SC6B8g==",
+    "Azure.Storage.Common/12.17.0": {
+      "sha512": "/h8SpUkxMuQy/MbNFeJQGmhYt3JnYfEiGeDojtNgLNzzhyDnRYgjF3ZKYgjORYQpn0Spr+4+v2MZy+0GNJBLrg==",
       "type": "package",
-      "path": "azure.storage.common/12.16.0",
+      "path": "azure.storage.common/12.17.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "CHANGELOG.md",
         "README.md",
-        "azure.storage.common.12.16.0.nupkg.sha512",
+        "azure.storage.common.12.17.0.nupkg.sha512",
         "azure.storage.common.nuspec",
         "azureicon.png",
         "lib/net6.0/Azure.Storage.Common.dll",
@@ -1131,12 +1146,18 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "BlobHelper/1.0.0": {
+      "type": "project",
+      "path": "../BlobHelper/BlobHelper.csproj",
+      "msbuildProject": "../BlobHelper/BlobHelper.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Azure.Identity >= 1.10.0",
-      "Azure.Storage.Blobs >= 12.17.0",
+      "Azure.Identity >= 1.10.1",
+      "Azure.Storage.Blobs >= 12.18.0",
+      "BlobHelper >= 1.0.0",
       "Nito.AsyncEx.Context >= 5.1.2"
     ]
   },
@@ -1161,12 +1182,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Users\\adity\\source\\repos\\blobStorage-ConsoleApp\\BlobHelper\\bin": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\adity\\source\\repos\\blobStorage-ConsoleApp\\BlobHelper\\BlobHelper.csproj": {
+              "projectPath": "C:\\Users\\adity\\source\\repos\\blobStorage-ConsoleApp\\BlobHelper\\BlobHelper.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -1181,11 +1207,15 @@
         "dependencies": {
           "Azure.Identity": {
             "target": "Package",
-            "version": "[1.10.0, )"
+            "version": "[1.10.1, )"
           },
           "Azure.Storage.Blobs": {
             "target": "Package",
-            "version": "[12.17.0, )"
+            "version": "[12.18.0, )"
+          },
+          "BlobHelper": {
+            "target": "Package",
+            "version": "[1.0.0, )"
           },
           "Nito.AsyncEx.Context": {
             "target": "Package",

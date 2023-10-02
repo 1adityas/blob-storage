@@ -15,30 +15,33 @@ namespace BlobHelper1
 
         }
 
-        public async void NewContainer()
+        public async void NewContainer(string containerName)
         {
 
             //Create a unique name for the container
-            string containerName = "quickstartblobs" + Guid.NewGuid().ToString();
+            if (string.IsNullOrEmpty(containerName))
+                 containerName = "quickstartblobs" + Guid.NewGuid().ToString();
             // Create the container and return a container client object
             BlobContainerClient containerClient = await blobServiceClient.CreateBlobContainerAsync(containerName);
-            Console.WriteLine(containerClient);
+            Console.WriteLine("new container with name", containerName);
         }
-        public async void UploadBlob(string containerName)
+        public async void UploadBlob(string containerName, string filePath)
         {
             // Create a local file in the ./data/ directory for uploading and downloading
-            string localPath = "/data";
-            Directory.CreateDirectory(localPath);
-            string fileName = "quickstart" + Guid.NewGuid().ToString() + ".txt";
-            string localFilePath = Path.Combine(localPath, fileName);
+            //string localPath = "/data";
+            //Directory.CreateDirectory(localPath);
+            //string fileName = "quickstart" + Guid.NewGuid().ToString() + ".txt";
+            string fileName = "quickstart" + Guid.NewGuid().ToString();
+            //string localFilePath = Path.Combine(localPath, fileName);
             // Write text to the file
-            await File.WriteAllTextAsync(localFilePath, "Hello, World!");
+            //await File.WriteAllTextAsync(localFilePath, "Hello, World!");
 
             // Get a reference to a blob
             BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient(containerName);// why we cant use async when using method
 
-            BlobClient blobClient = containerClient.GetBlobClient(fileName);
-            await blobClient.UploadAsync(localFilePath, true);
+
+            BlobClient blobClient = containerClient.GetBlobClient(fileName + ".docx");
+            await blobClient.UploadAsync(filePath, true);
         }
 
         public async Task<AsyncPageable<BlobItem>> ListBlob(string containerName)

@@ -10,20 +10,23 @@ internal class Program
 {
     private static void Main(string[] args)
     {
+        string filePath = "C:\\Users\\adity\\Downloads\\Telegram Desktop\\Aditya- Resume(0).docx";
+        string containerName = "new-container";
         string connectionString = constants.connectionString;
-        var blobCrudObject = new BlobHelper("");
+        var blobCrudObject = new BlobHelper(connectionString);
+        //to create a new container
+
+        blobCrudObject.NewContainer(containerName);
+
+        blobCrudObject.UploadBlob(containerName, filePath);
+        blobCrudObject.ListContainers();
+        //blobCrudObject.DeleteContainer("quickstartblobs14f8f1ef-7303-4b78-9f22-138d6ee63612");
+
+        //AsyncContext.Run(blobCrudObject.UploadBlob); 
+        //< --when uploadBlob had no parameters
     }
 }
 
-//to create a new container
-
-//AsyncContext.Run(blobCrudObject.NewContainer);
-
-//blobCrudObject.UploadBlob("newcontainer-1");
-//blobCrudObject.ListContainers();
-//blobCrudObject.DeleteContainer("quickstartblobs14f8f1ef-7303-4b78-9f22-138d6ee63612");
-
-//AsyncContext.Run(blobCrudObject.UploadBlob); <-- when uploadBlob had no parameters
 
 
 

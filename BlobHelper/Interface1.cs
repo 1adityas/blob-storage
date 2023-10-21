@@ -7,14 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace blobStorage_ConsoleApp
+namespace BlobHelper1
 {
     internal interface IBlobCrud
     {
         BlobServiceClient blobServiceClient { get; set; }
-        void blob_crud(string connectionString);
-        void NewContainer();
-        void UploadBlob(string containerName);
+
+        //void blob_crud(string connectionString);  
+        void NewContainer(string containerName);
+        void UploadBlob(string containerName, string filePath);
         Task<AsyncPageable<BlobItem>> ListBlob(string containerName);
         Pageable<BlobContainerItem> ListContainers();
         void DeleteBlob(string containerName, string deleteBlobName);

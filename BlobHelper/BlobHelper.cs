@@ -4,13 +4,13 @@ using Azure.Storage.Blobs.Models;
 
 namespace BlobHelper1
 {
-    public class BlobHelper
+    public class BlobHelper : IBlobCrud
     {
-        private string connectionString { get; set; }
-        private BlobServiceClient blobServiceClient { get; set; }
+        private string _connectionString { get; set; }
+        public BlobServiceClient blobServiceClient { get; set; }
         public BlobHelper(string connectionString)
         {
-            this.connectionString = connectionString;
+            this._connectionString = connectionString;
             this.blobServiceClient = new BlobServiceClient(connectionString);
 
         }
@@ -20,7 +20,7 @@ namespace BlobHelper1
 
             //Create a unique name for the container
             if (string.IsNullOrEmpty(containerName))
-                 containerName = "quickstartblobs" + Guid.NewGuid().ToString();
+                containerName = "quickstartblobs" + Guid.NewGuid().ToString();
             // Create the container and return a container client object
             BlobContainerClient containerClient = await blobServiceClient.CreateBlobContainerAsync(containerName);
             Console.WriteLine("new container with name", containerName);

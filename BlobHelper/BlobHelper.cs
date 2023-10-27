@@ -1,6 +1,9 @@
 ﻿using Azure;
 using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
+using Microsoft.Azure.Storage;
+using System.IO;
+using System.Runtime.CompilerServices;
 
 namespace BlobHelper1
 {
@@ -12,6 +15,12 @@ namespace BlobHelper1
         {
             this._connectionString = connectionString;
             this.blobServiceClient = new BlobServiceClient(connectionString);
+
+            //string accountName = "1blobstorage1";
+            //string accountKey = "";
+            string storageConnectionString = "DefaultEndpointsProtocol=https;AccountName=" + accountName + ";AccountKey=" + accountKey;
+            CloudStorageAccount account = CloudStorageAccount.Parse(storageConnectionString);
+
 
         }
 
@@ -44,27 +53,38 @@ namespace BlobHelper1
             await blobClient.UploadAsync(filePath, true);
         }
 
-        public async Task<AsyncPageable<BlobItem>> ListBlob(string containerName)
+        public Pageable<BlobItem> ListBlob(string containerName)
         {
             Console.WriteLine("Listing blobs...");
 
             BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient(containerName);// why we cant use async when using method
 
             // List all blobs in the container
-            var blobItems = containerClient.GetBlobsAsync();
+            var blobItems = containerClient.GetBlobs();
             BlobItem lastBlobItem;
-            await foreach (BlobItem blobItem in blobItems)
+            foreach (BlobItem blobItem in blobItems)
             {
                 Console.WriteLine("\t" + blobItem.Name);
                 lastBlobItem = blobItem;
-
             }
             return blobItems;
         }
+
+        public void DownloadBlob(string containerName, string blobName)
+        {
+            //var blobName = "dogFuny.png";
+            var blobClient = new BlobClient(this._connectionString, containerName, blobName);
+            var newFilePath = "C:\\Users\\adity\\Downloads\\" + blobName;
+            //var localFilePath = "C:\\Users\\adity\\Downloads";
+            FileStream fileStream = File.OpenWrite(newFilePath);
+            blobClient.DownloadTo(fileStream);
+            fileStream.Close();
+            //blobClient.DownloadTo("D:\\download_d");
+        }
+
         public Pageable<BlobContainerItem> ListContainers()
         {
             Console.WriteLine("Listing containers...");
-
             var BlobItems = blobServiceClient.GetBlobContainers();
             foreach (var blobItem in BlobItems)
             {
@@ -74,11 +94,33 @@ namespace BlobHelper1
 
             return BlobItems;
         }
+        /// <summary>
+        /// to transfer blob in between containers
+        /// </summary>
+        /// <param name="srcContainerName"></param>
+        /// <param name="blobName"></param>
+        /// <param name="destContainerName"></param>
+        public void interContainers(string srcContainerName, string blobName, string destContainerName)
+        {
+            var newFilePath = "C:\\Users\\adity\\Downloads\\" + blobName;
+            //this.DownloadBlob(blobName="");
+            var blobClient = new BlobClient(this._connectionString, srcContainerName, blobName);
+            var memStream = new MemoryStream();
+            //this.UploadBlob(destContainerName, newFilePath);
+            var blobContent = blobClient.DownloadContent().Value.Content;
 
-        public async void DeleteBlob(string containerName, string deleteBlobName)
+            BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient(destContainerName);// why we cant use async when using 
+            this.DeleteBlob(srcContainerName, blobName);
+            blobClient = containerClient.GetBlobClient(blobName);
+            blobClient.Upload(blobContent, true);
+        }
+
+        public void inter
+
+        public async void DeleteBlob(string containerName, string blobName)
         {
             BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient(containerName);// why we cant use async when using method
-            await containerClient.GetBlobClient(deleteBlobName).DeleteAsync();
+            await containerClient.GetBlobClient(blobName).DeleteAsync();
 
         }
 

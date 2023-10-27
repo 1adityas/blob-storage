@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Azure.Storage.Blobs" Version="12.18.0" />
+    <PackageReference Include="Microsoft.Azure.Storage.DataMovement" Version="2.0.4" />
   </ItemGroup>
 
 </Project>

@@ -16,7 +16,7 @@ namespace BlobHelper1
         //void blob_crud(string connectionString);  
         void NewContainer(string containerName);
         void UploadBlob(string containerName, string filePath);
-        Task<AsyncPageable<BlobItem>> ListBlob(string containerName);
+        Pageable<BlobItem> ListBlob(string containerName);
         Pageable<BlobContainerItem> ListContainers();
         void DeleteBlob(string containerName, string deleteBlobName);
         void DeleteContainer(string containerName);
